@@ -18,9 +18,6 @@ body {
 
 /* style.css */
 
-/* Navbar සහ Header කොටස (අලුත් එක) */
-/* --- Navbar සම්පූර්ණ CSS කොටස --- */
-
 header {
     position: absolute;
     top: 0;
@@ -40,7 +37,7 @@ nav {
     border-radius: 50px;
     border: 1px solid rgba(0, 0, 0, 0.1); 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    position: relative; /* Mobile menu එක හරි තැන පේන්න අවශ්‍යයි */
+    position: relative;
 }
 
 .logo {
@@ -92,7 +89,7 @@ nav ul li a {
     border-radius: 2px;
 }
 
-/* --- Mobile Responsive Styles (අනිවාර්යයි) --- */
+/* --- Mobile Responsive Styles --- */
 @media (max-width: 992px) {
     .menu-icon {
         display: flex;
@@ -111,12 +108,9 @@ nav ul li a {
         gap: 20px;
         border-radius: 20px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        
-        /* මුලින් මෙනු එක හංගන්න */
         display: none; 
     }
 
-    /* JS මගින් active class එක දැම්මාම මෙනු එක පේන්න */
     nav ul.active {
         display: flex;
     }
@@ -140,22 +134,21 @@ nav ul li a {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 125vh; /* Hero section එකේ උස */
+    height: 125vh; 
     display: flex;
     align-items: center;
     overflow: hidden;
 }
 
-/* HTML එකේ දාපු background image එක හැඩගැස්වීම */
 .hero-bg-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* පින්තූරය ඇදෙන්නේ නැතිව සම්පූර්ණයෙන් පිරවීමට */
-    z-index: -1; /* අකුරු වලට පිටුපසින් තැබීමට */
-    filter: brightness(0.6); /* අකුරු පේන්න image එක ටිකක් අඳුරු කළා */
+    object-fit: cover;
+    z-index: -1; 
+    filter: brightness(0.6); 
 }
 
 .hero-container {
@@ -240,7 +233,7 @@ nav ul li a {
     text-align: justify;
 }
 
-/* Mobile එකේදී එක යට එක පේන්න */
+
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
