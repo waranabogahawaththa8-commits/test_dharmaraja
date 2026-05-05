@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 @font-face {
     font-family: 'MyOldEnglish';
-    src: url('fonts/oldenglish.ttf') format('truetype');
+    src: url('../fonts/oldenglish.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
