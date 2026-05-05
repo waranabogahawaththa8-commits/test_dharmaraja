@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@font-face {
+    font-family: 'MyOldEnglish'; /* ඔයා කැමති නමක් දෙන්න */
+    src: url('fonts/OldEnglish.ttf') format('truetype'); /* ෆයිල් එක තියෙන තැන සහ වර්ගය */
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     margin: 0;
     padding: 0;
