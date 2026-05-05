@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* style.css */
+
+/* Navbar සහ Header කොටස (අලුත් එක) */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 8%;
+}
+
+/* Logo එක සහ අකුරු එක පේළියට ගැනීමට */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Logo එක සහ අකුරු අතර පරතරය */
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d2e17;
+}
+
+/* Logo එකේ ප්‍රමාණය පාලනය කිරීමට */
+.nav-logo {
+    width: 30px; /* ඔබට අවශ්‍ය ප්‍රමාණයට වෙනස් කරගන්න */
+    height: auto;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d2e17; 
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; 
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8b3d1b; 
+}
+
+/* ඉතිරි styles (Hero section, about section ආදිය) මීට යටින් තියෙන්න දෙන්න */
+
+/* Hover කළාම අකුරු වලට ලස්සන දිලිසීමක් දෙන්න */
+nav ul li a:hover {
+    color: #f1c40f;
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+/* Hero Section Settings */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 125vh; /* Hero section එකේ උස */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* HTML එකේ දාපු background image එක හැඩගැස්වීම */
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* පින්තූරය ඇදෙන්නේ නැතිව සම්පූර්ණයෙන් පිරවීමට */
+    z-index: -1; /* අකුරු වලට පිටුපසින් තැබීමට */
+    filter: brightness(0.6); /* අකුරු පේන්න image එක ටිකක් අඳුරු කළා */
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 8%;
+    color: white;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: #f1c40f;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* Floating Image
+.hero-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.floating {
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    animation: upDown 3s ease-in-out infinite;
+} */
+
+@keyframes upDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+/* content Section Styles */
+.about-section {
+    padding: 80px 8%;
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center; 
+    gap: 50px; 
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* Mobile එකේදී එක යට එක පේන්න */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about-section-reverse {
+    padding: 80px 8%;
+    background-color: #fdfaf7;
+}
+
+.about-container.reverse {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .about-container.reverse {
+        flex-direction: column-reverse; 
+        text-align: center;
+    }
+}
+
+/* image Hover Effect */
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.about-image img:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
