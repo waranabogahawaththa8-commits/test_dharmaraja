@@ -12,30 +12,14 @@ body {
 /* style.css */
 
 /* Navbar සහ Header කොටස (අලුත් එක) */
+/* --- Navbar සම්පූර්ණ CSS කොටස --- */
+
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     z-index: 1000;
     padding: 20px 8%;
-}
-
-/* Logo එක සහ අකුරු එක පේළියට ගැනීමට */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* Logo එක සහ අකුරු අතර පරතරය */
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #5d2e17;
-}
-
-/* Logo එකේ ප්‍රමාණය පාලනය කිරීමට */
-.nav-logo {
-    width: 30px; /* ඔබට අවශ්‍ය ප්‍රමාණයට වෙනස් කරගන්න */
-    height: auto;
-    object-fit: contain;
 }
 
 nav {
@@ -48,14 +32,23 @@ nav {
     -webkit-backdrop-filter: blur(15px);
     border-radius: 50px;
     border: 1px solid rgba(0, 0, 0, 0.1); 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative; /* Mobile menu එක හරි තැන පේන්න අවශ්‍යයි */
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    color: #5d2e17; 
+    color: #5d2e17;
+}
+
+.nav-logo {
+    width: 40px;
+    height: auto;
 }
 
 nav ul {
@@ -76,18 +69,66 @@ nav ul li a {
     transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: #8b3d1b; 
+/* Mobile Menu Icon (Hamburger) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
 }
 
-/* ඉතිරි styles (Hero section, about section ආදිය) මීට යටින් තියෙන්න දෙන්න */
-
-/* Hover කළාම අකුරු වලට ලස්සන දිලිසීමක් දෙන්න */
-nav ul li a:hover {
-    color: #f1c40f;
-    text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #5d2e17;
+    transition: 0.3s;
+    border-radius: 2px;
 }
 
+/* --- Mobile Responsive Styles (අනිවාර්යයි) --- */
+@media (max-width: 992px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        
+        /* මුලින් මෙනු එක හංගන්න */
+        display: none; 
+    }
+
+    /* JS මගින් active class එක දැම්මාම මෙනු එක පේන්න */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    /* Hamburger Animation */
+    .menu-icon.toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-icon.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-icon.toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
 /* Hero Section Settings */
 .hero-section {
     position: relative;
