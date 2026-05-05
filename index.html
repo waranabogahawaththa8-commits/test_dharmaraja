@@ -11,20 +11,29 @@
 
     <header>
         <nav>
-            <div class="logo">
-                <img src="img/Crest - Colored.png" alt="Dharmaraja Logo" class="nav-logo">
-                Dharmaraja College
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Who we are</a></li>
-                <li><a href="#">Event</a></li>
-                <li><a href="#">Academics</a></li>
-                <li><a href="#">Societies</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="logo">
+        <img src="img/Crest - Colored.png" alt="Logo" class="nav-logo">
+        Dharmaraja College
+    </div>
+
+    <!-- Hamburger Icon - ID එක බලන්න -->
+    <div class="menu-icon" id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Menu Links - ID එක බලන්න -->
+    <ul id="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Who we are</a></li>
+        <li><a href="#">Event</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Societies</a></li>
+        <li><a href="#">Sport</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
     </header>
 
     <!-- Hero Section -->
@@ -112,6 +121,22 @@
         </div>
     </div>
 </section>
+
+<script>
+    // මෙනු එක සහ අයිකනය හඳුනා ගැනීම
+    const menuIcon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    // අයිකනය ක්ලික් කළ විට සිදුවිය යුතු දේ
+    if(menuIcon && navMenu) {
+        menuIcon.onclick = function() {
+            // මෙනු එක පෙන්වීමට හෝ සැඟවීමට
+            navMenu.classList.toggle('active');
+            // ඉරි තුන 'X' කිරීමට
+            menuIcon.classList.toggle('toggle');
+        }
+    }
+</script>
 
 </body>
 </html>
