@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MyOldEnglish';
+    src: url('../fonts/oldenglish.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,19 +26,24 @@ header {
     width: 100%;
     z-index: 1000;
     padding: 20px 8%;
+    transition: all 0.3s ease;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    padding: 12px 40px;
+    
+    /* --- Liquid Glass Effect එක වැඩි දියුණු කිරීම --- */
+    background: rgba(255, 255, 255, 0.15); /* පසුබිම තවත් පාරදෘශ්‍ය කළා */
+    backdrop-filter: blur(20px); /* බොඳ ගතිය (Blur) වැඩි කළා */
+    -webkit-backdrop-filter: blur(20px);
+    
     border-radius: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.1); 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Border එක සුදු පාටින් ඉතා සිහින්ව ලබා දීමෙන් වීදුරු පෙනුම වැඩි වේ */
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
     position: relative; 
 }
 
@@ -39,21 +51,25 @@ nav {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: bold;
+    /* පාසල් වෙබ් අඩවියට ගැළපෙන custom font එක පාවිච්චි කරමු */
+    font-family: 'MyOldEnglish', serif; 
+    font-size: 24px;
     color: #5d2e17;
+    text-decoration: none;
 }
 
 .nav-logo {
     width: 40px;
     height: auto;
+    /* ලාංඡනය වීදුරුව උඩින් ලස්සනට ඉස්සිලා පේන්න drop shadow එකක් */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 nav ul {
     display: flex;
     list-style: none;
     margin: 0;
+    align-items: center;
 }
 
 nav ul li {
@@ -62,12 +78,32 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333; 
+    color: black; 
     font-size: 15px;
     font-weight: 600;
     transition: 0.3s;
+    position: relative;
 }
 
+/* Hover කළාම යටින් ඉරක් යන animation එකක් */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f1c40f; /* රන්වන් පැහැය */
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #f1c40f; 
+}
 /* Mobile Menu Icon (Hamburger) */
 .menu-icon {
     display: none;
