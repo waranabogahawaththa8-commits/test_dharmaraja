@@ -35,8 +35,8 @@ nav {
     align-items: center;
     padding: 12px 40px;
     
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
     
     border-radius: 50px;
@@ -45,13 +45,17 @@ nav {
     position: relative; 
 }
 
+nav a {
+    text-decoration: none;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     font-family: 'MyOldEnglish', serif; 
     font-size: 24px;
-    color: #5d2e17;
+    color: black;
     text-decoration: none;
 }
 
@@ -88,7 +92,7 @@ nav ul li a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #f1c40f;
+    background-color: #f1c40f; 
     transition: 0.3s;
 }
 
